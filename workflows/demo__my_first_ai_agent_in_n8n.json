@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2025-11-23T12:05:25.680Z",
+  "updatedAt": "2025-11-23T14:01:29.648Z",
   "createdAt": "2025-11-23T12:00:55.468Z",
   "id": "uk5GqJhNlJEHJyGe",
   "name": "Demo: My first AI Agent in n8n",
@@ -71,6 +71,19 @@
         592,
         32
       ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        944,
+        32
+      ],
+      "id": "532a0365-a18b-49ea-849a-3d8524a42b4d",
+      "name": "Code in JavaScript"
     }
   ],
   "connections": {
@@ -95,6 +108,17 @@
           }
         ]
       ]
+    },
+    "Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "settings": {
@@ -106,8 +130,8 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "c3353480-6a96-430a-aba4-0749d33f02ef",
-  "versionCounter": 2,
+  "versionId": "1c373949-f06d-4edc-b453-910008b4355f",
+  "versionCounter": 3,
   "triggerCount": 0,
   "shared": [
     {
